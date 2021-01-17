@@ -1,6 +1,6 @@
 let transactions = [];
+let pendingTransactions = [];
 let myChart;
-
 fetch("/api/transaction")
   .then(response => {
     return response.json();
@@ -9,6 +9,21 @@ fetch("/api/transaction")
     // save db data on global variable
     transactions = data;
 
+    if (navigator.onLine){
+      console.log("I'm online");
+    } else {
+        console.log("I'm offline");
+        const transaction = db.transaction(["pending"], "readonly");
+        const store = transaction.objectStore("pending");
+        const allPendingRecords = store.getAll();
+        allPendingRecords.onsuccess = function() {
+          pendingTransactions = allPendingRecords.result;
+          populateTotal();
+          populateTable();
+          populateChart();
+        }
+    }
+    
     populateTotal();
     populateTable();
     populateChart();
@@ -19,6 +34,12 @@ function populateTotal() {
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value);
   }, 0);
+  // reduce pending transaction amounts to a single total value
+  let pendingTotal = pendingTransactions.reduce((total, t) => {
+    return total + parseInt(t.value);
+  }, 0);
+
+  total = total + pendingTotal;
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
@@ -27,7 +48,18 @@ function populateTotal() {
 function populateTable() {
   let tbody = document.querySelector("#tbody");
   tbody.innerHTML = "";
+  
+  pendingTransactions.forEach(transaction => {
+    // create and populate a table row
+    let tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${transaction.name}</td>
+      <td>${transaction.value}</td>
+    `;
 
+    tbody.insertBefore(tr, tbody.firstChild);
+  });
+  
   transactions.forEach(transaction => {
     // create and populate a table row
     let tr = document.createElement("tr");
@@ -43,6 +75,11 @@ function populateTable() {
 function populateChart() {
   // copy array and reverse it
   let reversed = transactions.slice().reverse();
+  
+  pendingTransactions.forEach(transaction => {
+  reversed.push(transaction)
+  });
+ 
   let sum = 0;
 
   // create date labels for chart
@@ -137,7 +174,6 @@ function sendTransaction(isAdding) {
   .catch(err => {
     // fetch failed, so save in indexed db
     saveRecord(transaction);
-
     // clear form
     nameEl.value = "";
     amountEl.value = "";

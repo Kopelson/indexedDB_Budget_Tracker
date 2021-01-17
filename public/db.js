@@ -13,8 +13,9 @@ request.onsuccess = function (event) {
     //check if app is online before reading from db
     if (navigator.onLine) {
         checkDatabase();
-    }
+    } 
 };
+
 //handles request errors
 request.onerror = function (event) {
     console.log("Error: " + event.target.errorCode);
@@ -28,7 +29,7 @@ function saveRecord(record) {
     //add a record to the store with add method
     store.add(record);
 }
-//
+//This posts all the pending transactions to the mongodb when connection is back online
 function checkDatabase() {
     //open a transaction on the pending object store in the budget db
     const transaction = db.transaction(["pending"], "readwrite");
