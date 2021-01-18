@@ -9,16 +9,20 @@
 
 ## Overview
 <p>Offline Functionality:</p>
-
 <ul>
   <li>Enter deposits offline</li>
   <li>Enter expenses offline</li>
-  <li>Offline page reloads refresh charts with offline entries</li>
+  <li>Offline reloads refresh charts with offline entries</li>
 </ul>
 <p>When brought back online:</p>
 <ul>
   <li>Offline entries are added to tracker</li>
 </ul>
+![onlineDeposits](https://user-images.githubusercontent.com/57735283/104968320-54f35180-599a-11eb-96f7-21a053759a2e.gif)
+![onlineExpenses](https://user-images.githubusercontent.com/57735283/104968321-558be800-599a-11eb-8dd5-51a5e7fa8213.gif)
+![offlineFunctionality](https://user-images.githubusercontent.com/57735283/104968317-545abb00-599a-11eb-9048-7f245d6f60bb.gif)
+![reloadOffline](https://user-images.githubusercontent.com/57735283/104968323-558be800-599a-11eb-9fe9-bd7c91756678.gif)
+![offlineTransactionReload](https://user-images.githubusercontent.com/57735283/104968319-54f35180-599a-11eb-9171-7902cd17dc59.gif)
 
 ## User Story
 AS AN avid traveller
