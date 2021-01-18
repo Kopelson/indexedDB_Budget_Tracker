@@ -41,3 +41,10 @@ THEN that will be shown on the page, and added to their transaction history when
  - a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction
 ### Cache Storage API
 - allows the service worker to cache routes and responses to help make the app functional offline
+
+## Credits
+* Trilogy Education Services for project setup
+
+## Badges
+<a href="https://img.shields.io/badge/CSS-13.4%25-yellow"><img alt="HTML Usage" src="https://img.shields.io/badge/CSS-13.4%25-yellow"></a> <a href="https://img.shields.io/badge/CSS-4.4%25-purple"><img alt="CSS Usage" src="https://img.shields.io/badge/CSS-4.4%25-purple"></a> <a href="https://img.shields.io/badge/JavaScript-82.2%25-yellow"><img alt="Javascript usage" src="https://img.shields.io/badge/JavaScript-82.2%25-yellow"></a><a href="https://img.shields.io/badge/Backend-Node.js-green"><img alt="Node.js" src="https://img.shields.io/badge/Backend-Node.js-green"></a> <a href="https://img.shields.io/badge/Backend-Express.js-green"><img alt="Express.js" src="https://img.shields.io/badge/Backend-Express.js-green"></a> <a href="https://img.shields.io/badge/Database-MongoDB-yellow"><img alt="database used MongoDB" src="https://img.shields.io/badge/Database-MongoDB-yellow"></a> <a href="https://img.shields.io/badge/Deployment-Heroku-purple"><img alt="deployed using Heroku" src="https://img.shields.io/badge/Deployment-Heroku-purple"></a>
+
