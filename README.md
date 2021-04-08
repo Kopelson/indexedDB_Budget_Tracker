@@ -1,13 +1,13 @@
-# indexedDB Budget Tracker
+# indexedDB Budget Tracker :
 
-## Description
-  <p>I added functionality to an existing budget tracker application to allow for offline access and functionality using IndexedDB, service workers, and cashe storage.</p>
+I added functionality to an existing budget tracker application to allow for offline access and functionality using IndexedDB, service workers, and cashe storage.
 
-* Project link: https://rocky-headland-72531.herokuapp.com/
+Project link: https://rocky-headland-72531.herokuapp.com/
+
+## Overview
 
 ![main](https://user-images.githubusercontent.com/57735283/104964801-08a41380-5992-11eb-9892-e51d266cf2b6.PNG)
 
-## Overview
 <p>Offline Functionality:</p>
 <ul>
   <li>Enter deposits offline</li>
